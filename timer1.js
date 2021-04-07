@@ -2,7 +2,7 @@ const args = process.argv.slice(2);
 // console.log(args);
 
 const timer = sec => {
-	if (sec.length  === 0 || !sec) return;
+	if (sec.length  === 0 || !sec) return ;
 	
 	let timer = 0;
 	for (let t of sec) {
@@ -10,7 +10,7 @@ const timer = sec => {
 		if (timer < 0) continue;
 		if (isNaN(timer)) continue;
 		setTimeout(() => {
-			process.stdout.write('.');
+			process.stdout.write('\x07');
 		}, timer);
 	}
 	setTimeout(() => {process.stdout.write(`\n`)}, timer)
